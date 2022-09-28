@@ -1,0 +1,164 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* CSS PROPERTIES */
+:root {
+    --ff-body: 'Ubuntu', sans-serif;
+    --clr-prim: #38E4AE;
+    --clr-sec: #AEDCC0;
+    --clr-accent: #607466;
+    --clr-neutral: #343E3D;  
+}
+
+
+/* GENREAL CSS */
+body {
+  background-color: var(--clr-neutral);
+}
+
+button {
+  display: block;
+  color: var(--clr-prim);
+  background-color: var(--clr-neutral);
+  border: 3px solid var(--clr-prim);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--clr-accent);
+}
+
+
+/* TYPOGRAPHY */
+body {
+  font-family: var(--ff-body);
+  color: var(--clr-prim);
+}
+
+.logo {
+  font-size: 2.5rem;
+}
+
+.add-book {
+  font-size: 1.5rem;
+}
+
+
+/* MAIN CSS */
+header {
+  padding: 2rem;
+}
+
+.navbar {
+  position: fixed;
+  right: 0;
+  width: calc(50%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  transform:translateX(-50%)
+}
+
+.add-book {
+  margin-right: 3rem;
+}
+
+main {
+  margin-top: 7em;
+  margin-inline: 5rem;
+}
+
+.card {
+  border: 3px solid var(--clr-prim);
+  border-radius: 10px;
+  width: 15%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.read-p {
+  display: inline;
+}
+
+.read-btn {
+  display: inline;
+}
