@@ -14,16 +14,6 @@ function Book(title, author, pages, read) {
     }
 }
 
-function addBookToLibrary(title, author, pages, read) {
-    const newBook = new Book(title, author, pages, read);
-    myLibrary.push(newBook);
-}
-
-addBookToLibrary('Book1', 'author1', '333', 'YES');
-addBookToLibrary('Book2', 'author2', '333', 'NO');
-addBookToLibrary('Book3', 'author3', '333', 'YES');
-addBookToLibrary('Book4', 'author4', '444', 'NO');
-
 
 function updateBooks(library) {
     const booksElement = document.getElementById('books-grid')
@@ -56,6 +46,61 @@ function removeBook(element) {
 
 updateBooks(myLibrary)
 
+// MODAL (Adding books)
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('modal-overlay')
+
+openModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const modal = document.querySelector(button.dataset.modalTarget)
+      openModal(modal)
+    })
+  })
+  
+  overlay.addEventListener('click', () => {
+    const modals = document.querySelectorAll('.modal.active')
+    modals.forEach(modal => {
+      closeModal(modal)
+    })
+  })
+  
+  closeModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const modal = button.closest('.modal')
+      closeModal(modal)
+    })
+  })
+  
+  function openModal(modal) {
+    if (modal == null) return
+    modal.classList.add('active')
+    overlay.classList.add('active')
+  }
+  
+  function closeModal(modal) {
+    if (modal == null) return
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
+  }
 
 
+function addBook() {
+    const title = document.getElementById("book-title").value
+    const author = document.getElementById("book-author").value
+    const pages = document.getElementById("book-pages").value
+    let read = document.getElementById("book-read").checked
+    read = read ? 'YES' : 'NO'
+
+    const newBook = new Book(title, author, pages, read);
+    myLibrary.push(newBook);
+
+    updateBooks(myLibrary)
+
+    const modal = document.getElementById('modal')
+    closeModal(modal)
+    
+    const form = document.getElementsByClassName('form-container')[0]
+    form.reset()
+}
 

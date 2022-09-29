@@ -12,16 +12,48 @@
     <title>Library</title>
 </head>
 <body>
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+        <div class="modal-header">
+          <div></div>
+          <div class="modal-title">ADD BOOK</div>
+          <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form onsubmit="addBook(); return false" class="form-container">
+            <label for="book-title"><b>Book title:</b></label>
+            <input type="text" placeholder="Book Ttitle" id="book-title" required>
+        
+            <label for="book-author"><b>Author:</b></label>
+            <input type="text" placeholder="Author" id="book-author" required>
+            
+            <label for="book-pages"><b>Number of pages:</b></label>
+            <input type="number" placeholder="Number of pages" id="book-pages" required>
+            
+            <label>
+              <b>Read the book:</b>
+              <input type="checkbox" id="book-read">
+            </label>
+
+            <button class="btn" type="submit">+ Add Book</button>
+
+          </form>
+        </div>
+      </div>
+    <!-- MODAL -->
+
     <header>
         <nav class="navbar">
             <h1 class="logo">Libr(app)ry</h1>
-            <button class="add-book">+ Add Book</button>
+            <button class="add-book" data-modal-target="#modal">+ Add Book</button>
         </nav>
     </header>
 
     <main>
         <section class="books" id="books-grid"></section>
     </main>
+
+    <div id="modal-overlay"></div>    
 
 </body>
 </html>
