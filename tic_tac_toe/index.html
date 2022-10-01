@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <title>TIC TAC TOE</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- MODAL -->
+    <div id="result-modal">
+        <p id="game-result">X HAS WON THE GAME!</p>
+        <button id="play-again-btn">Play again</button>
+    </div>
+    <div id="result-overlay"></div>
+    <!-- MODAL -->
+    <header>
+        <h1 class="title">TIC TAC TOE</h1>
+        <h3 class="instruction">Start game by clicking on one of the boxes</h3>
+    </header>
+
+    <main class="game-board">
+        <div class="board-cell" data-field="0">X</div>
+        <div class="board-cell" data-field="1">X</div>
+        <div class="board-cell" data-field="2">O</div>
+        <div class="board-cell" data-field="3">X</div>
+        <div class="board-cell" data-field="4">O</div>
+        <div class="board-cell" data-field="5">X</div>
+        <div class="board-cell" data-field="6">X</div>
+        <div class="board-cell" data-field="7">O</div>
+        <div class="board-cell" data-field="8">X</div>
+    </main>
+
+    <button class="restart-btn">RESTART</button>
+</body>
+</html>
