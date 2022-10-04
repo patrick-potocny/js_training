@@ -1,17 +1,20 @@
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.read = read
-    this.pages = pages
-    this.updateRead = function () {
-        if (this.read === 'YES'){
-            this.read = 'NO'
-        }else {
-            this.read = 'YES'
-        }
+class Book {
+    constructor(title, author, read, pages) {
+      this.title = title
+      this.author = author
+      this.read = read
+      this.pages = pages
+      this.updateRead = function () {
+          if (this.read === 'YES'){
+              this.read = 'NO'
+          }else {
+              this.read = 'YES'
+          }
+      }
     }
+
 }
 
 
@@ -92,7 +95,7 @@ function addBook() {
     let read = document.getElementById("book-read").checked
     read = read ? 'YES' : 'NO'
 
-    const newBook = new Book(title, author, pages, read);
+    const newBook = new Book(title, author, read, pages);
     myLibrary.push(newBook);
 
     updateBooks(myLibrary)
