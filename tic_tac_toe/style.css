@@ -122,8 +122,8 @@ body {
     text-align: center;
 }
 
-.instruction {
-    text-align: center;
+#instruction {
+  text-align: center;
 }
 
 
@@ -150,13 +150,17 @@ main {
     cursor: pointer;
 }
 
+#instruction.inactive {
+  opacity: 0;
+}
+
 /* RESULT MODAL */
 #result-modal{
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    transition: 200ms ease-in-out;
+    transition: 400ms ease-in-out;
     z-index: 99;
     text-align: center;
 }
@@ -168,7 +172,7 @@ main {
 #result-overlay {
     position: fixed;
     opacity: 0;
-    transition: 200ms ease-in-out;
+    transition: 400ms ease-in-out;
     top: 0;
     left: 0;
     right: 0;
