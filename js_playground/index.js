@@ -1,12 +1,23 @@
-API_KEY = '8ZDWCzqq7DLLVy9klpx8pwNxRQvjVt3y'
-url = `https://api.giphy.com/v1/gifs/translate?api_key=${API_KEY}&s=cats`
-const image = document.getElementsByClassName('image')[0]
-const sec_img = document.getElementById('image')
+const API_KEY = "8ZDWCzqq7DLLVy9klpx8pwNxRQvjVt3y";
+const url = `https://api.giphy.com/v1/gifs/translate?api_key=${API_KEY}&s=cats`;
+const images = document.getElementsByClassName("image");
 
-fetch(url, {mode: 'cors'})
-.then((response) => response.json())
-.then((data) => image.src = data.data.images.original.url);
+function delay(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
 
-fetch(url, {mode: 'cors'})
-.then((response) => response.json())
-.then((data) => sec_img.src = data.data.images.original.url);
+function loadGifs(url, images) {
+  for (const img of images) {
+    console.log('f start');
+    const response  = fetch(url, {mode: 'cors'})
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(response) {
+      img.src = response.data.images.original.url;
+    })
+    console.log('f end');
+  }
+}
+
+loadGifs(url, images)
