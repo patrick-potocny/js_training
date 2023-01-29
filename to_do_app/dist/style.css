@@ -1,0 +1,295 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* CSS PROPERTIES */
+:root {
+  --ff-main: "Nunito", sans-serif;
+  --clr-prim: hsla(254, 100%, 58%, 1);
+  --clr-bg: hsla(279, 98%, 65%, 1);
+  --clr-text: hsl(318, 68%, 11%);
+  --clr-card: hsla(0, 0%, 0%, 0.2);
+  --clr-hover: hsla(0, 100%, 100%, 0.2);
+}
+
+/* GENEREAL CSS */
+ul {
+  list-style: none;
+}
+
+li > a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  margin: 0 auto;
+}
+
+/* TYPOGRAPHY */
+h1 {
+  font-size: 3rem;
+}
+
+.list-desc {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.list-link {
+  font-size: 1.4rem;
+}
+
+.task-list-title {
+  font-size: 3rem;
+}
+
+.task-title{
+  font-size: 1.5rem;
+}
+
+#add-task {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.project-name {
+  font-size: 1.5rem;
+}
+
+.project-del {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* MAIN CSS */
+body {
+  font-family: var(--ff-main);
+  background: linear-gradient(var(--clr-prim), var(--clr-bg) 15%);
+  color: var(--clr-text);
+}
+
+/* HEADER */
+header {
+  /* background-color: var(--clr-prim); */
+  display: flex;
+  justify-content: space-around;
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%;
+  width: 19rem;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--clr-card);
+  overflow-x: hidden;
+  padding-left: 3rem;
+}
+
+.list-desc {
+  margin-top: 5rem;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--clr-text);
+}
+
+.list-link {
+  transition: 150ms ease-in;
+  border-radius: 5px;
+}
+
+.list-link:hover, .list-link-active {
+  background-color: var(--clr-hover);
+  transform: translateX(1rem);
+}
+
+/* MAIN */
+main {
+  margin-left: 19rem;
+  height: 90vh; 
+  padding: 3rem;
+}
+
+.task-list{
+  background-color: var(--clr-card);
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  overflow: auto;
+}
+
+.task-list-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+#add-task {
+  width: 10rem;
+}
+
+.task-list-title {
+  text-align: center;
+}
+
+.task{ 
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--clr-hover);
+}
+
+.task-done {
+  width: 2rem;
+  height: 2rem;
+}
+
+.task-btn {
+  width: 3rem;
+  padding: 0.4rem;
+  background-color: var(--clr-bg);
+  border: 2px solid var(--clr-text);
+  border-radius: 1rem;
+  margin-left: 1rem;
+}
+
+.due-date {
+  margin-left: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.task-divider {
+  width: 2px;
+  height: 100%;
+  background-color: var(--clr-text);
+  margin-inline: 0.5rem;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+}
+
+.task-btn:hover {
+  background-color: var(--clr-hover);
+  cursor: pointer;
+}
+
+#task-done {
+  margin: 0;
+}
+
+.task-input {
+  height: 100%;
+  font-size: 1.3rem;
+  background-color: var(--clr-bg);
+  border: 2px solid var(--clr-text);
+  border-radius: 1rem;
+}
+
+.task-confirm {
+  background-color: green;
+  height: 3rem;
+}
+
+.task-cancel {
+  background-color: red;
+  height: 3rem;
+}
+
+.task-focus {
+  border: 2px solid var(--clr-text);
+}
+
+#del-project {
+  width: 1rem;
+  display: inline;
+}
+
+.project-del {
+  width: 15rem;
+  background-color: red;
+}

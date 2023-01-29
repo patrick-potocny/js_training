@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>TO-DO-APP</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="bundle.js" defer></script>
+  </head>
+  <body>
+    <div id="mySidenav" class="sidenav">
+      <p class="list-desc">Tasks</p>
+      <div class="divider"></div>
+      <ul>
+        <li><a href="#" class="list-link category" id="today-link">Today</a></li>
+        <li><a href="#" class="list-link category" id="tomorrow-link">Tomorrow</a></li>
+        <li><a href="#" class="list-link category" id="week-link">This week</a></li>
+        <li><a href="#" class="list-link category" id="all-link">All tasks</a></li>
+      </ul>
+      <p class="list-desc">Projects</p>
+      <div class="divider"></div>
+      <ul id="projects-list"></ul>
+    </div>
+
+    <header><h1 class="logo">&lt/&gtTODOAPP.js&lt/&gt</h1></header>
+
+    <main>
+      <div class="task-list">
+        <div class="task-list-header">
+          <h2 class="task-list-title" id="current-category"></h2>
+          <div class="task-list-btns">
+            <button class="task-btn" id="add-task">+Add Task</button>
+          </div>
+        </div>
+
+        <div id="tasks-list">
+          
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
